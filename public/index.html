@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Lo quiero!</title>
+<!-------------------- FONT SQUIRREL--------------------->
+<link rel="stylesheet" href="fonts/stylesheet.css">
+<!--------------------FONT AWESOME--------------->
+<script src="https://kit.fontawesome.com/a237d351fd.js" crossorigin="anonymous"></script>       
+<!------------------ Boostrap-------------------- -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+<!---------------- FONT GOOGLE --------------------->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+<!-----------------CSS--------------------->    
+<link rel="stylesheet" href="css/style.css">
+    
+<!--METADATOS-->
+     
+    <meta name="description" content="Lo quiero!"/>
+    <meta name="keywords" content ="web e commerce, tienda online, venta , productos"/>
+    <Meta name="author" content="Paula Dure - Hernan Santarelli"/>
+    <meta name="copyright" content="Meerkat.Pau && Hernan Santarelli 2022"/>
+    
+<!-- ROBOTS: tengo que elegir una opcion por cada web que haga  -->
+    <Meta name="ROBOTS" content= "index follow"/>
+    
+    <!-- Favicon (icono pequeño de la ventana) -->
+    <link rel="icon" href="images/icon.png" type="image/png"/>  
+    <!-- Metadatos para Facebook -->
+    <meta property= "og:title" content= "Lo quiero web"/>
+    <meta property="og:description" content="No se puede comprar la felicidad, pero podés acercarte buscando acá "/>
+    <meta property="og:type" content="tienda online"/>
+    <meta property="og:image" content="images/iconoFc.png"/>
+    <meta property="og:url" content="lo-quiero-web.web.app"/>
+    <!-- Metadatos para twitter -->
+    <meta property= "twitter:title" content= "Lo quiero web"/>
+    <meta property="twitter:description" content="No se puede comprar la felicidad, pero podés acercarte buscando acá "/>
+    <meta property="twitter:type" content="tienda online"/>
+    <meta property="twitter:image" content="images/iconoFc.png"/>
+    <meta property="twitter:url" content="lo-quiero-web.web.app"/>
+  
+      
+</head>
+<body>
+  <header id="header" class=" dnone">
+    <img src="images/logo.png" class="header_img" alt="">
+    <nav class="header_nav">               
+      <ul class="nav_ul">
+        <li class="btn_categoria cat_joyas"> Joyeria  </li>
+        <li class=" btn_categoria cat_elect"> Electronica </li>
+        <li onmouseover="ver(1)" onmouseout="ocultar(1)"> Indumentaria         
+          <div id="subseccion1">
+            <p class="men btn_categoria cat_men">Masculina</p>
+            <p class="women btn_categoria cat_women">Femenina</p>  
+          </div>
+        </li>  
+      </ul>  
+      <div class="nav_mobile">
+        <span onmouseover="ver(2)" onmouseout="ocultar(2)"><i class="fa-solid fa-bars"></i> 
+            <ul class="nav_ul" id="subseccion2">
+                <li class="btn_categoria cat_joyasMobile"> Joyeria  </li>
+                <li class="btn_categoria cat_electMobile"> Electronica </li>
+                <li class="btn_categoria cat_menMobile"> Indumentaria Masculina </li>
+                <li class="btn_categoria cat_womenMobile"> Indumentaria Femenina </li>
+            </ul> 
+        </span>
+    </div>    
+        <i class="fa-solid fa-cart-shopping btn_categoria cart" ><sup id="cantidadProductos">0</sup> </i>
+      
+    </nav>
+  </header>
+  <main id="inicio" class="section dnone">
+   <section  class="splash">
+      <div class="splash_txt">
+          <h2 class="splash_txt--primario">No necesitas.</h2>
+          <h2 class="splash_txt--primario">Mereces.</h2>
+          <h4 class="splash_txt--secundario">Nueva COLECCIÓN JOHN HARDY LEGENDS</h4>
+          <button class="btn_callAction btn_general" type="button">Ver colección >></button>
+      </div>
+          <img src="images/hardy.jpg" alt="Jhon Hardy" class="img_splash">            
+    </section>
+<!-------------------CATEGORIAS------------------------->
+    <section  class="categorias espacios ">
+      <div class="container ">
+      <div class="row">
+        <div class="col-md-12">
+          <h2  class="titulos espacios">¿Qué vas a elegir hoy?</h2>
+        </div>
+        <div id="section_category" class="row"></div>
+      </div>
+    </div>
+    </section>
+  </main>
+
+<!------------------- Pantalla eleccion de PRODUCTOS---------------------->
+    <section id="section_productos" class="section section_productos dnone">
+      <div id="pagina_productos" class="div_productos row"></div>
+      </div>
+    </section>
+    <div class="add_cart dnone">
+        <img src="images/addcarrito.gif" alt="">
+    </div >
+<!------------------- MODAL---------------------->
+<div class="modal fade" id="miModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-medidas modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <img src="images/logo.png" alt=""class="modal-title" id="exampleModalLabel">
+        
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">     
+      </div>
+    </div>
+  </div>
+</div>
+<!----------------LISTA DE COMPRAS---------------->
+
+    <section id="lista_compras" class="section dnone lista_compras">
+    <div class="list__compras--container">
+      <div id="no_producto" class="noproducto">
+        <p>Tu carrito esta vacio</p>
+        <p>¿No sabés qué comprar? ¡Miles de productos te esperan!</p>
+      </div>
+      <ul id="listado" class="listado_carrito"></ul>
+      <div class="total_compra"><div id="total"></div>
+      <button class=" btn-primary dnone" id="lista_compras--btn">COMPRAR</button></div>
+    </section>  
+      <div class="delete_cart dnone">
+        <img src="images/removecarrito.gif" alt="">
+    </div >
+  </div>
+</div>
+  
+<!----------------MÉTODOS DE PAGO---------------->
+
+<section class="section payment_methods dnone" id="payment_methods">
+  <div class="payment">
+  <div class="payment_methods--container">
+    <div class="payment_methods--tittle">
+      <h2>¿Como querés pagar?</h2>
+      <a href="">Ver promociones sin interés</a>
+    </div>
+    <form class="payment_methods--cards" action="">
+      <label ><input name="cards" type="radio" checked><img src="images/mercadoquiero.png" alt="mq" class="pay_img"> Mercado Crédito</label>
+      <label ><input name="cards" type="radio"><img src="images/master.png" alt="master" class="pay_img">Mastercard Débito **** 1234</label>
+      <label ><input name="cards" type="radio"><img src="images/bba.jpg" alt="bbva" class="pay_img">BBVA **** 1234</label>
+      <label ><input name="cards" type="radio"><img src="images/visa.png" alt="visa" class="pay_img">Visa Débito **** 1234</label>
+      <label ><input name="cards" type="radio">Nueva tarjeta de crédito</label>
+      <label ><input name="cards" type="radio">Nueva tarjeta de débito</label>
+    </form>
+  </div>
+  <div class="buy">
+    <img src="images/logo.png" class="buy_logo" alt="logo">
+  <div class="buy_description">
+    <h3>Detalle de tu compra</h3>
+    <div>
+      <span id="products_num">Producto</span>
+      <span id="products_price"></span>
+    </div>
+    <div>
+      <span id="discount">Descuento</span>
+      <span id="discount_cant">$0</span>
+    </div>
+    <div>
+      <span id="pay">Pagás</span>
+      <span id="pay_total"></span>
+    </div>
+     <button class="btn-primary" id="last_btn_buy"> COMPRAR</button>
+  </div>
+</div>
+</div>
+</section>
+<!----------------LOADING---------------->
+    <section id="loading" class="section_loading  section ">
+        <img src="images/gif_loading.gif" class="gif_loading" alt="">
+    </section>
+    <section id="exito" class="section_pago section dnone">
+      <img src="images/exito.gif" class="section_pago--img" alt="">
+    </section>
+<!------------------ FOOTER ----------------------->
+    <footer id="footer" class="dnone">
+      <p class="foot">Web creada por <a href="https://www.instagram.com/hernan_santarelli08">Hernán</a>  &  <a href="https://www.instagram.com/meerkat.pau"> Meerkat.Pau<img id="icono" src="images/meerkat.png" alt="Meerkat"></a>  - Argentina </p>
+      <p class="foot"> Lo quiero inventada para el WINTERHACK 2022</p>
+    </footer>
+
+<!------------------- JS DE BOOTSTRAP---------------------->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>    
+    <script src="js/categorias.js"></script>    
+    <script src="js/main.js"></script>
+</body>
+</html>
+
+
+
